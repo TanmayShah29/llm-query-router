@@ -1,0 +1,5 @@
+# Only what the router slice of the SatQuery backend needs (router.py, llm_router.py, config.py, tests).
+httpx==0.28.1
+pydantic==2.10.5
+pydantic-settings==2.7.1
+pytest==8.0.0

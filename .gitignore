@@ -1,0 +1,24 @@
+# Python / tooling
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.DS_Store
+
+# Secrets (API keys for the dataset pipeline live in backend/.env)
+.env
+backend/.env
+
+# Model artifacts (adapters ~21 MB, GGUF up to ~2 GB): publish on Hugging Face instead
+ml/router_ft/adapters/
+ml/router_ft/fused/
+ml/router_ft/models/
+*.gguf
+*.safetensors
+ml/router_ft/colab/*.zip
+ml/router_ft/colab/*.json
+
+# Run-time state of the dataset dashboard
+results/router_ft/logs/
+results/router_ft/pipeline.pid
+results/router_ft/pipeline_status.json
