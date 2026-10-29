@@ -22,6 +22,9 @@ Qwen2.5-1.5B, from labelling spec to deployment, with the evaluation done carefu
 +33.3 points over regex (95% CI 24.9–41.8, McNemar p = 3e-12). *Exact match* means all five fields of the
 decision are right.
 
+On Hugging Face: the adapter, [TanmayShah29/satquery-router-qwen2.5-1.5b-lora](https://huggingface.co/TanmayShah29/satquery-router-qwen2.5-1.5b-lora),
+and the dataset, [TanmayShah29/satquery-router-decisions](https://huggingface.co/datasets/TanmayShah29/satquery-router-decisions).
+
 > **Caveat, up front:** the test labels are *silver*. Two different LLMs labelled each test query blind and
 > only full agreements were kept; no human checked them. So the set is probably easier than real traffic,
 > and these numbers are agreement with those labels. The write-up treats this seriously.
@@ -92,7 +95,7 @@ uv run python select_checkpoint.py adapters/qwen1.5b-r8
 uv run python eval.py run --name ft-qwen1.5b-r8 --router mlx --model mlx-community/Qwen2.5-1.5B-Instruct-4bit --adapter adapters/qwen1.5b-r8-best --prompt sft
 ```
 
-The trained adapter isn't in git (it's a model artifact). Rebuilding the dataset needs a free Groq key and a
+The trained adapter isn't in git (it's a model artifact); download it from Hugging Face (link above). Rebuilding the dataset needs a free Groq key and a
 free OpenRouter key in `backend/.env` (`GROQ_API_KEY`, `OPENROUTER_API_KEY`), then
 `uv run python ui.py` and press Start.
 

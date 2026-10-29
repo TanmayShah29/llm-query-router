@@ -22,3 +22,6 @@ ml/router_ft/colab/*.json
 results/router_ft/logs/
 results/router_ft/pipeline.pid
 results/router_ft/pipeline_status.json
+
+# Hugging Face upload staging (copies of files already in this repo or in git-ignored adapters)
+hf_upload/
